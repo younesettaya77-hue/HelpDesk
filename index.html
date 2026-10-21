@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HelpDesk</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <div class="nav-bar-mobile">
+                <img src="assets\logo-helpDesk.jpg">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="cader-de-section1">
+            <div>
+                <h1>Gestion des demandes</h1>
+                <p>Suivez et gérez les incidents informatiques.</p>
+            </div>
+            <div class="cader-de-form">
+                <h2>Créer une demande</h2>
+                <p>Décrivez votre problème informatique.</p>
+                <div class="forms-med">
+                    <div class="titre ">
+                        <label for="Titre">Titre du problème *</label><br><br>
+                        <input type="text" class="input-decore" id="Titre" name="Titre"
+                            placeholder="Connexion Wi-Fi instable" required>
+                    </div>
+                    <div>
+
+                        <label for="Réseau">Catégorie *</label><br><br>
+                        <select class="input-selection" id="Réseau" name="Réseau" required>
+                            <option value="Réseau">Réseau</option>
+                            <option value="3#">3#</option>
+                            <option value="4#">4#</option>
+                            <option value="5#">5#</option>
+                            <option value="6#">6#</option>
+                        </select>
+                    </div>
+                    <div>
+
+                        <label for="Priorité">Priorité *</label><br><br>
+                        <select class="input-selection" id="Priorité" name="Priorité" required>
+                            <option value="Priorité">Haute</option>
+                            <option value="3#">3#</option>
+                            <option value="4#">4#</option>
+                            <option value="5#">5#</option>
+                            <option value="6#">6#</option>
+                        </select>
+                    </div>
+                    <div class="desc input-information">
+                        <label for="Titre">Titre du problème *</label><br><br>
+                        <textarea name="msg" class="input-text" id="" cols="48" rows="8"
+                            placeholder="Décrivez votre problème..."></textarea>
+                    </div>
+
+                    <button class=" grand-btn input-decore-btn">+ Ajouter la demande</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="nomber-demande">
+                <h3>Liste des demandes</h3>
+                <p>3 demandes</p>
+            </div>
+        </section>
+        <section>
+            <div class="articls">
+                <article class="forma-articl">
+                    <div class="flech-articl ">
+                        <i class="fa-solid fa-bolt bg-flech"></i>
+                        <p>HD-001</p>
+                    </div>
+                    <div class="titre-articl">
+                        <h3>Connexion Wi-Fi instable</h3>
+                        <p>Le réseau se déconnecte régulièrement.</p>
+                    </div>
+                    <div class="deux-sinification">
+                        <p>Logiciel</p>
+                        <p>Normale</p>
+                    </div>
+                    <hr>
+                    <div class="modifier-supprimer">
+                        <button class="btn-modifier">✎ Modifier</button>
+                        <button class="btn-supprimer">♜ Supprimer</button>
+                    </div>
+                </article>
+                    
+            </div>
+
+
+
+        </section>
+    </main>
 </body>
+
 </html>
