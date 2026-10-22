@@ -1,5 +1,5 @@
 
-const demandes = [
+let demandes = [
   {
     id: 1,
     titre: "Connexion Wi-Fi instable",
@@ -24,12 +24,13 @@ const demandes = [
 ];
 let NmberCart = 4; 
 
-Affichage(demandes);
+//Afichage
+Affichage(demandes); 
+
 const Ajout = document.getElementById("Ajout");
 function Affichage(demandes) {
   const contenier = document.querySelector(".articls");
   contenier.textContent = "";
-  console.log(demandes);
   for (let i = 0; i < demandes.length; i++) {
 
 
@@ -116,6 +117,7 @@ function Affichage(demandes) {
 
     const sup = document.createElement("button");
     sup.classList.add("btn-supprimer");
+    sup.setAttribute("onclick" , `Supprimer('${demandes[i].id}')`)
 
     const supicon = document.createElement("i");
     supicon.classList.add("fa-solid", "fa-trash-can");
@@ -128,10 +130,13 @@ function Affichage(demandes) {
     contenier.append(forma);
 
   }
-
 }
-
-
+//fonction suprimer 
+function Supprimer(id){  
+  demandes = demandes.filter(dema => dema.id !== Number(id) );  
+  Affichage(demandes);
+}
+//fonction Ajouter
 function AjouterDemmande() {
   let obj = {};
   obj.id = NmberCart++;
@@ -148,6 +153,7 @@ function AjouterDemmande() {
 
 
 }
+
 Ajout.addEventListener("click", (i) => {
   i.preventDefault();
   AjouterDemmande();
