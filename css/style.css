@@ -51,6 +51,7 @@ main {
 }
 
 .input-selection {
+  padding: 0.5rem;
   height: 2.7rem;
   width: 100%;
   border-radius: 8px;
@@ -71,6 +72,7 @@ main {
   border: none;
   color: aliceblue;
   background-color: var(--primary-dark);
+  cursor: pointer;
 }
 
 .nomber-demande p {
@@ -85,6 +87,7 @@ main {
 .nomber-demande {
   display: flex;
   justify-content: start;
+  flex-wrap: wrap;
   gap: 1em;
   padding: 1em;
 }
@@ -113,7 +116,14 @@ main {
 }
 
 .deux-sinification p {
-  background-color: rgba(240, 243, 247, 1);
+  background-color: rgb(213, 214, 215);
+  width: fit-content;
+  padding: 3px 30px 3px 11px;
+  border-radius: 10px;
+}
+
+.deux-sinification span {
+  background-color: rgb(253, 136, 136);
   width: fit-content;
   padding: 3px 30px 3px 11px;
   border-radius: 10px;
@@ -123,6 +133,7 @@ main {
   display: flex;
   justify-content: start;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2em;
 }
 
@@ -135,6 +146,8 @@ hr {
   font-weight: bold;
   background-color: #ffffff;
   color: rgba(97, 112, 132, 1);
+  cursor: pointer;
+
 }
 
 .btn-supprimer {
@@ -142,16 +155,20 @@ hr {
   font-weight: bold;
   background-color: #ffffff;
   color: rgba(204, 98, 106, 1);
+  cursor: pointer;
+
 }
 
 .modifier-supprimer {
   display: flex;
   justify-content: end;
+  flex-wrap: wrap;
+
 }
 
 .articls {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1em;
   padding: 2em 1em;
 }
@@ -159,6 +176,7 @@ hr {
 .forma-articl {
   background-color: var(--primary-background);
   max-width: calc(100% - 2rem);
+  min-width: 0;
   border-radius: 15px;
   box-shadow: 0 2px 12px rgb(224, 222, 222);
   padding: 1rem;
@@ -194,7 +212,7 @@ hr {
   }
 
   .grand-btn {
-    grid-column: 1/5;
+    grid-column: 4/5;
   }
 
   .articls {
