@@ -43,9 +43,9 @@
                     </div>
                     <div>
 
-                        <label for="Réseau">Catégorie *</label><br><br>
-                        <select class="input-selection" id="Réseau" name="Réseau" required>
-                            <option value=" Catégorie">Choisir Catégorie</option>
+                        <label for="Réseaux">Catégorie *</label><br><br>
+                        <select class="input-selection" id="Réseaux" name="Réseau" required>
+                            <!-- <option value="">Choisir Catégorie</option> -->
                             <option value="Matériel">Matériel</option>
                             <option value="Logiciel">Logiciel</option>
                             <option value="Réseau">Réseau</option>
@@ -56,10 +56,9 @@
 
                         <label for="Priorité">Priorité *</label><br><br>
                         <select class="input-selection" id="Priorité" name="Priorité" required>
-                            <option value="Priorité">Haute</option>
+                            <option value="Haute">Haute</option>
                             <option value="Normale">Normale</option>
                             <option value="Basse">Basse</option>
-                            <option value="5#">5#</option>
                         </select>
                     </div>
                     <div class="desc input-information">
@@ -68,14 +67,14 @@
                             placeholder="  Décrivez votre problème...  "></textarea>
                     </div>
 
-                    <button class=" grand-btn input-decore-btn">+ Ajouter la demande</button>
+                    <button class=" grand-btn input-decore-btn" id="Ajout">+ Ajouter la demande</button>
                 </div>
             </div>
         </section>
         <section>
             <div class="nomber-demande">
                 <h3>Liste des demandes</h3>
-                <p>3 demandes</p>
+                <p id=""></p>3 demandes</p>
             </div>
         </section>
         <section>
