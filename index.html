@@ -39,17 +39,17 @@
                     <div class="titre ">
                         <label for="Titre">Titre du problème *</label><br><br>
                         <input type="text" class="input-decore" id="Titre" name="Titre"
-                            placeholder="Connexion Wi-Fi instable" required>
+                            placeholder="  Connexion Wi-Fi instable  " required>
                     </div>
                     <div>
 
                         <label for="Réseau">Catégorie *</label><br><br>
                         <select class="input-selection" id="Réseau" name="Réseau" required>
+                            <option value=" Catégorie">Choisir Catégorie</option>
+                            <option value="Matériel">Matériel</option>
+                            <option value="Logiciel">Logiciel</option>
                             <option value="Réseau">Réseau</option>
-                            <option value="3#">3#</option>
-                            <option value="4#">4#</option>
-                            <option value="5#">5#</option>
-                            <option value="6#">6#</option>
+                           
                         </select>
                     </div>
                     <div>
@@ -57,16 +57,15 @@
                         <label for="Priorité">Priorité *</label><br><br>
                         <select class="input-selection" id="Priorité" name="Priorité" required>
                             <option value="Priorité">Haute</option>
-                            <option value="3#">3#</option>
-                            <option value="4#">4#</option>
+                            <option value="Normale">Normale</option>
+                            <option value="Basse">Basse</option>
                             <option value="5#">5#</option>
-                            <option value="6#">6#</option>
                         </select>
                     </div>
                     <div class="desc input-information">
-                        <label for="Titre">Titre du problème *</label><br><br>
-                        <textarea name="msg" class="input-text" id="" cols="48" rows="8"
-                            placeholder="Décrivez votre problème..."></textarea>
+                        <label for="description">description *</label><br><br>
+                        <textarea name="msg" class="input-text" id="description" cols="48" rows="8"
+                            placeholder="  Décrivez votre problème...  "></textarea>
                     </div>
 
                     <button class=" grand-btn input-decore-btn">+ Ajouter la demande</button>
@@ -81,32 +80,13 @@
         </section>
         <section>
             <div class="articls">
-                <article class="forma-articl">
-                    <div class="flech-articl ">
-                        <i class="fa-solid fa-bolt bg-flech"></i>
-                        <p>HD-001</p>
-                    </div>
-                    <div class="titre-articl">
-                        <h3>Connexion Wi-Fi instable</h3>
-                        <p>Le réseau se déconnecte régulièrement.</p>
-                    </div>
-                    <div class="deux-sinification">
-                        <p>Logiciel</p>
-                        <p>Normale</p>
-                    </div>
-                    <hr>
-                    <div class="modifier-supprimer">
-                        <button class="btn-modifier">✎ Modifier</button>
-                        <button class="btn-supprimer">♜ Supprimer</button>
-                    </div>
-                </article>
+        
                     
             </div>
-
-
-
+            
         </section>
     </main>
+      <script src="JS/script.js"></script>
 </body>
 
 </html>
