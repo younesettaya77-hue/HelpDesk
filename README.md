@@ -147,7 +147,7 @@ Exemples de messages de commit :
 
 ## Liens
 
-- [Dépôt GitHub HelpDesk](https://github.com/younesettaya77-hue/HelpDesk)
+- [Dépôt GitHub HelpDesk](https://younesettaya77-hue.github.io/HelpDesk/)
 - [Profil GitHub du propriétaire du dépôt](https://github.com/younesettaya77-hue)
 
 
