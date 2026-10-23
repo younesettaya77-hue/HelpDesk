@@ -6,7 +6,7 @@
 }
 
 body {
-  background-colorbackground: rgba(247, 248, 250, 1);
+  background-color: rgba(247, 248, 250, 1);
   font-family: "Inter", sans-serif;
   margin: 0;
 }
@@ -123,7 +123,7 @@ main {
 }
 
 .deux-sinification span {
-  background-color: rgb(253, 136, 136);
+  background-color: rgb(219, 113, 113);
   width: fit-content;
   padding: 3px 30px 3px 11px;
   border-radius: 10px;
