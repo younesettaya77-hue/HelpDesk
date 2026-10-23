@@ -220,9 +220,7 @@ Ajoutbtn.addEventListener("click", (i) => {
   AjouterDemmande();
   console.log(demandes);
   Affichage(demandes);
-
   
-
 });
 
 
