@@ -8,7 +8,6 @@ const Ajoutbtn = document.getElementById("Ajout");
 
 //Button carte et tableaux
 const carte = document.getElementById("cart");
-
 const table = document.getElementById("tabl");
 
 let checker = 0;
@@ -49,14 +48,14 @@ Affichage(demandes);
 function nombreD(demandes) {
   const Ncarte = document.getElementById("Ncartes");
   Ncarte.textContent = demandes.length + " demandes";
-
+  
 }
 
 function Affichage(demandes) {
   const contenier = document.querySelector(".articls");
   contenier.textContent = "";
   for (let i = 0; i < demandes.length; i++) {
-
+  
     nombreD(demandes);
 
     // article de tout les div .
@@ -266,7 +265,7 @@ Ajoutbtn.addEventListener("click", (i) => {
 
 
 
-//les deux button carte et tableaux 
+//les deux button carte et tableaux pour afficher tableaux .
 table.addEventListener("click", (i) => {
   i.preventDefault();
   carte.style.backgroundColor = "rgb(136, 136, 135)";
