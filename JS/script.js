@@ -1,3 +1,20 @@
+const titreP = document.getElementById("Titre");
+const Description = document.getElementById("description");
+const categorie = document.getElementById("Réseaux");
+const Priorité = document.getElementById("Priorité");
+
+//button D'Ajouter 
+const Ajoutbtn = document.getElementById("Ajout");
+
+//Button carte et tableaux
+const carte = document.getElementById("cart");
+
+const table = document.getElementById("tabl");
+
+let checker = 0;
+let demande;
+let NmberCart = 4;
+
 
 let demandes = [
   {
@@ -21,19 +38,18 @@ let demandes = [
     categorie: "Logiciel",
     priorite: "Basse"
   }
+
 ];
-let NmberCart = 4;
 
 //Afichage
 Affichage(demandes);
 
-const Ajoutbtn = document.getElementById("Ajout");
 
 // nomber de demandes 
 function nombreD(demandes) {
   const Ncarte = document.getElementById("Ncartes");
   Ncarte.textContent = demandes.length + " demandes";
-  
+
 }
 
 function Affichage(demandes) {
@@ -50,30 +66,30 @@ function Affichage(demandes) {
     const flech = document.createElement("div");
     flech.classList.add("flech-articl");
 
-    
-// icon de la carte avec la condition
+
+    // icon de la carte avec la condition
     const flix = document.createElement("i");
-        if (demandes[i].priorite === "Haute") {
-    flix.classList.add("fa-solid");
-    flix.classList.add("fa-bolt");
-    flix.classList.add("bg-flech");
-    flech.append(flix);
-        }
+    if (demandes[i].priorite === "Haute") {
+      flix.classList.add("fa-solid");
+      flix.classList.add("fa-bolt");
+      flix.classList.add("bg-flech");
+      flech.append(flix);
+    }
     if (demandes[i].priorite === "Normale") {
       flix.classList.add("fa-solid");
       flix.classList.add("fa-square-caret-down");
-       flix.classList.add("bg-flech");
+      flix.classList.add("bg-flech");
       flech.append(flix);
     }
-     if (demandes[i].priorite === "Basse") {
-       flix.classList.add("fa-solid");
+    if (demandes[i].priorite === "Basse") {
+      flix.classList.add("fa-solid");
       flix.classList.add("fa-spa");
-       flix.classList.add("bg-flech");
+      flix.classList.add("bg-flech");
       flech.append(flix);
-     }
+    }
 
 
-     // id de la carte
+    // id de la carte
     const nmber_art = document.createElement("p");
     nmber_art.textContent = "HD-00" + demandes[i].id;
     flech.append(nmber_art);
@@ -112,6 +128,7 @@ function Affichage(demandes) {
     priorité.textContent = demandes[i].priorite;
     deuxcas.append(priorité);
     forma.append(deuxcas);
+
     if (demandes[i].priorite === "Haute") {
       priorité.style.backgroundColor = " rgba(255, 240, 232, 1)";
       priorité.style.color = "rgba(186, 100, 68, 1)";
@@ -171,23 +188,32 @@ function Affichage(demandes) {
 }
 
 
+
 //fonction suprimer 
-function Supprimer(id) { 
-  demandes = demandes.filter(dema => dema.id !== Number(id));
-  Affichage(demandes);
+function Supprimer(id) {
+  const delet = confirm("cofirmer la supprission");
+  if (delet) {
+    demandes = demandes.filter(dema => dema.id !== Number(id));
+    Affichage(demandes);
+  }
+  else if (!delet) {
+    return;
+  }
+
 }
 
 
 //fonction Modifier 
 function Modifier(id) {
-  index = demandes.findIndex(demand => demand.id === Number(id));
-  const objet = demandes[index];
-  const modification = {
-  }
-  demandes[index] = modification;
+  checker = id
+  demande = demandes.find(demand => demand.id === Number(id));
+  titreP.value = demande.titre
+  categorie.value = demande.categorie;
+  Priorité.value = demande.priorite;
+  Description.value = demande.description;
+  Ajoutbtn.textContent = " + Cofirmer La Modification";
+
 }
-
-
 
 
 
@@ -195,32 +221,59 @@ function Modifier(id) {
 function AjouterDemmande() {
   let obj = {};
   obj.id = NmberCart++;
-  const titreP = document.getElementById("Titre");
   obj.titre = titreP.value;
-  const Description = document.getElementById("description");
   obj.description = Description.value;
-  const categorie = document.getElementById("Réseaux");
   obj.categorie = categorie.value;
-  const Priorité = document.getElementById("Priorité");
   obj.priorite = Priorité.value;
-  if (titreP.value === "" || Description.value === "" || categorie.value ==="" || Priorité.value ==="") {
-    return;
+  if (titreP.value === "" || Description.value === "" || categorie.value === "" || Priorité.value === "") {
+    return alert("veulliez entrer touts les donner");
   }
   else {
-demandes.push(obj);
-  titreP.value = "";
-  Description.value = "";
-  categorie.value = "";
-  Priorité.value ="";
+    demandes.push(obj);
+    titreP.value = "";
+    Description.value = "";
+    categorie.value = "";
+    Priorité.value = "";
+
   }
-  
 }
 Ajoutbtn.addEventListener("click", (i) => {
   i.preventDefault();
-  AjouterDemmande();
-  console.log(demandes);
+  if (checker === 0) {
+    AjouterDemmande();
+  }
+  else if (checker !== 0) {
+    demande.titre = titreP.value;
+    demande.description = Description.value;
+    demande.categorie = categorie.value;
+    demande.priorite = Priorité.value;
+    if (titreP.value === "" || Description.value === "" || categorie.value === "" || Priorité.value === "") {
+      return alert("veulliez entrer touts les donner");
+    }
+    console.log(checker);
+    checker = 0;
+    Ajoutbtn.textContent = "+ Ajouter la demandes ";
+    titreP.value = "";
+    Description.value = "";
+    categorie.value = "";
+    Priorité.value = "";
+  }
   Affichage(demandes);
-  
+
+
+
 });
 
 
+
+//les deux button carte et tableaux 
+table.addEventListener("click", (i) => {
+  i.preventDefault();
+  carte.style.backgroundColor = "rgb(136, 136, 135)";
+  table.style.backgroundColor = "rgb(250, 250, 246)";
+});
+carte.addEventListener("click", (i) => {
+  i.preventDefault();
+  table.style.backgroundColor = "rgb(136, 136, 135)";
+  carte.style.backgroundColor = "rgb(250, 250, 246)";
+})
